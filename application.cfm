@@ -1,3 +1,3 @@
 <cfscript>
-	JSONfile = '/animals.json'
+	JSONfile = 'animals.json'
 </cfscript>

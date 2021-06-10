@@ -1,0 +1,25 @@
+Procedures I used to identify errors:
+1) I first opened and inspected all the files after pulling them into my local dev environment
+2) I enabled debugging on my locahost and tried to run the site.
+3) After receiving the first general coldfusion error, I opened the JASON file and threw it into a JSON validator to identify any errors
+4) After fixing the JSON error, I inspected the index file and was able to fix the obvious errors (wrong attributes, missing closing cfif's, etc). I also formatted the code with indents for easier readability.
+5) From there I utilized the Coldfusion debugging to identify and fix the remaining errors.
+
+Errors Found:
+1) Missing comma in the JSON file
+2) The JSON contained in the cfhhtp.filecontent variable needed to be deserialized
+3) The hidden form element "qCheck" needed to be uncommented
+4) The variable "Match" needed to be defined and set
+5) The cfloop that determines if the correct answer was submitted had the wrong attribute of "index" instead of "item"
+6) The same cfloop had the array incorrectly referenced as "Animals" instead of "Animals.Animals"
+7) There was a missing "</cfif>" in the loop that set the variable "Match"
+
+* I also left comments in the Index.cfm file detailing where and what changes I made.
+
+
+Enhancements:
+When working through this project, it caught me a few times when I would submit an answer after I had already submitted one previously and I couldn't tell if I actually submitted the form or not because the "Incorrect"
+image would remain. I added code that would hide the incorrect or correct image, if you had previously submitted an answer, when you select a different option in the dropdown. I know it wasn't required but I found it helpful 
+to let me know that the form was working correctly. 
+
+I left comments in the code in the Index.cfm file detailing what code I added for this "enhancement" and where I added it.
